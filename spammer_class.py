@@ -78,9 +78,9 @@ class Spammer:
             while True:
                 try:
                     if proxy == None:
-                        r = requests.post('http://shuri-muri.com/registration/', data={'phoneNumber': _phone, 'countryCode': 'ID', 'name': 'test', 'email': 'mail@mail.com', 'deviceToken': '*'}, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0'})
+                        r = requests.post('https://fotostrana.ru/signup/signup/signup/', data={'user_name': 'test', 'user_sex': 'm', 'user_birthday_day': '2', 'user_birthday_month': '2', 'user_birthday_year': '1999', 'user_email_or_phone': _phone, 'terms_agree': '239'}, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0'})
                     else:
-                        r = requests.post('http://shuri-muri.com/registration/', data={'phoneNumber': _phone, 'countryCode': 'ID', 'name': 'test', 'email': 'mail@mail.com', 'deviceToken': '*'}, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0'}, proxies={'http': str(proxy), 'https': str(proxy)})
+                        r = requests.post('https://fotostrana.ru/signup/signup/signup/', data={'user_name': 'test', 'user_sex': 'm', 'user_birthday_day': '2', 'user_birthday_month': '2', 'user_birthday_year': '1999', 'user_email_or_phone': _phone, 'terms_agree': '239'}, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0'}, proxies={'http': str(proxy), 'https': str(proxy)})
                 except requests.exceptions.ConnectionError:
                     print showstatus(wrapsbrace(('thread-{}').format(thread_name)) + wrapsbrace('except', True) + ('ConnectionError thrown! Sleeping for {}s . . .').format(delaytime), 'warn')
                     sleep(delaytime)
